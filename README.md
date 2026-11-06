@@ -38,3 +38,17 @@ Run pytest. Tests use SQLite by default; configure DATABASE_URL for PostgreSQL.
 
 ## Design
 Ownership is assigned from the authenticated request, never trusted from client input. Object permissions prevent cross-user access. PostgreSQL is selected with DATABASE_URL; SQLite is a convenient fallback for tests and local exploration. Production deployments should use managed secrets, HTTPS, backups, rate limits, and structured logging.
+
+
+## Folder tree
+task-management-rest-api/
+|-- config/                 Django project settings and root routes
+|-- tasks/                  Task model, serializers, permissions, API views
+|-- tasks/migrations/       Database schema migrations
+|-- tests/                  Registration, authorization, and validation tests
+|-- .github/workflows/      Continuous integration
+|-- .env.example            Local configuration template
+|-- manage.py               Django command-line entry point
+|-- pytest.ini              pytest configuration
+|-- requirements.txt        Python dependencies
+|-- README.md               Project and API documentation
