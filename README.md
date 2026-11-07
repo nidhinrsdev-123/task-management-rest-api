@@ -14,39 +14,38 @@ Python 3.11+, Django 5, Django REST Framework, Simple JWT, django-filter, drf-sp
 
 ## Exact repository structure
 
-This tree matches the files currently committed to GitHub:
+This tree matches the files currently committed to GitHub. Inline comments explain the purpose of each folder and file.
 
-~~~text
+```text
 task-management-rest-api/
-├── .github/
-│   └── workflows/
-│       └── tests.yml
-├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── tasks/
-│   ├── __init__.py
-│   ├── migrations/
-│   │   ├── __init__.py
-│   │   └── 0001_initial.py
-│   ├── models.py
-│   ├── permissions.py
-│   ├── serializers.py
-│   └── views.py
-├── tests/
-│   ├── __init__.py
-│   └── test_api.py
-├── .env.example
-├── .gitignore
-├── LICENSE
-├── manage.py
-├── pytest.ini
-├── README.md
-└── requirements.txt
-~~~
-
+├── .env.example  # Template for environment variables
+├── .github/  # GitHub automation and repository workflows
+│   └── workflows/  # Continuous integration workflows
+│       └── tests.yml  # Runs automated tests on pushes and pull requests
+├── .gitignore  # Files Git should ignore
+├── LICENSE  # Project license
+├── README.md  # Project overview, setup guide and API documentation
+├── config/  # Django project configuration
+│   ├── __init__.py  # Marks config as a Python package
+│   ├── settings.py  # Installed apps, database, authentication and security settings
+│   ├── urls.py  # Root URL patterns and API routing
+│   └── wsgi.py  # WSGI entry point for deployment
+├── manage.py  # Django command-line entry point
+├── pytest.ini  # Configures pytest
+├── requirements.txt  # Lists required Python packages
+├── tasks/  # Task management application code
+│   ├── __init__.py  # Marks tasks as a Python package
+│   ├── migrations/  # Versioned database schema changes
+│   │   ├── 0001_initial.py  # Creates the initial task database schema
+│   │   └── __init__.py  # Marks migrations as a Python package
+│   ├── models.py  # Defines the task database model and fields
+│   ├── permissions.py  # Defines owner and staff access rules
+│   ├── serializers.py  # Validates input and converts model data to JSON
+│   └── views.py  # Implements registration and task API operations
+└── tests/  # Automated application tests
+    ├── __init__.py  # Marks tests as a Python package
+    └── test_api.py  # Tests registration, task operations and permissions
+```
 ## Step-by-step: run locally (Windows)
 
 ### 1. Install prerequisites
